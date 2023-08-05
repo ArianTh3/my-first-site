@@ -11,9 +11,9 @@ def blog_view(request):
 def blog_single(request, pid):
     
     
-    blog_object = get_object_or_404(blog_Post, pk=pid)
-    blog_object.counted_views += 1
-    blog_object.save()
+    post = blog_Post.objects.get(published_date__lte=timezone.now(), status=1, pk=pid)
+    post.counted_views += 1
+    post.save()
     
-    context = {'post':blog_object} 
+    context = {'post':post} 
     return render(request, "blog/blog-single.html", context)
