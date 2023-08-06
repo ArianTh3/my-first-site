@@ -8,11 +8,11 @@
       <div class="about-content col-lg-12">
         <h1 class="text-white">Blog Details Page</h1>
         <p class="text-white link-nav">
-          <a href="index.html">Home </a>
+          <a href="{% url 'website:index' %}">Home </a>
           <span class="lnr lnr-arrow-right"></span
-          ><a href="blog-home.html">Blog </a>
+          ><a href="{% url 'blog:index' %}">Blog </a>
           <span class="lnr lnr-arrow-right"></span>
-          <a href="blog-single.html"> Blog Details Page</a>
+          <a href="{% url 'blog:single' post.id %}"> Blog Details Page</a>
         </p>
       </div>
     </div>
@@ -29,7 +29,7 @@
         <div class="single-post row">
           <div class="col-lg-12">
             <div class="feature-img">
-              <img class="img-fluid" src="img/blog/feature-img1.jpg" alt="" />
+              <img class="img-fluid" src="{% static 'img/blog/feature-img1.jpg' %}" alt="" />
             </div>
           </div>
           <div class="col-lg-3 col-md-3 meta-details">
@@ -84,10 +84,10 @@
             </div>
             <div class="row mt-30 mb-30">
               <div class="col-6">
-                <img class="img-fluid" src="img/blog/post-img1.jpg" alt="" />
+                <img class="img-fluid" src="{% static 'img/blog/post-img1.jpg' %}" alt="" />
               </div>
               <div class="col-6">
-                <img class="img-fluid" src="img/blog/post-img2.jpg" alt="" />
+                <img class="img-fluid" src="{% static 'img/blog/post-img2.jpg' %}" alt="" />
               </div>
               <div class="col-lg-12 mt-30">
                 <p>
@@ -115,7 +115,7 @@
             >
               <div class="thumb">
                 <a href="#"
-                  ><img class="img-fluid" src="img/blog/prev.jpg" alt=""
+                  ><img class="img-fluid" src="{% static 'img/blog/prev.jpg' %}" alt=""
                 /></a>
               </div>
               <div class="arrow">
@@ -142,7 +142,7 @@
               </div>
               <div class="thumb">
                 <a href="#"
-                  ><img class="img-fluid" src="img/blog/next.jpg" alt=""
+                  ><img class="img-fluid" src="{% static 'img/blog/next.jpg' %}" alt=""
                 /></a>
               </div>
             </div>
@@ -154,7 +154,7 @@
             <div class="single-comment justify-content-between d-flex">
               <div class="user justify-content-between d-flex">
                 <div class="thumb">
-                  <img src="img/blog/c1.jpg" alt="" />
+                  <img src="{% static 'img/blog/c1.jpg' %}" alt="" />
                 </div>
                 <div class="desc">
                   <h5><a href="#">Emilly Blunt</a></h5>
@@ -171,7 +171,7 @@
             <div class="single-comment justify-content-between d-flex">
               <div class="user justify-content-between d-flex">
                 <div class="thumb">
-                  <img src="img/blog/c2.jpg" alt="" />
+                  <img src="{% static 'img/blog/c2.jpg' %}" alt="" />
                 </div>
                 <div class="desc">
                   <h5><a href="#">Elsie Cunningham</a></h5>
@@ -188,7 +188,7 @@
             <div class="single-comment justify-content-between d-flex">
               <div class="user justify-content-between d-flex">
                 <div class="thumb">
-                  <img src="img/blog/c3.jpg" alt="" />
+                  <img src="{% static 'img/blog/c3.jpg' %}" alt="" />
                 </div>
                 <div class="desc">
                   <h5><a href="#">Annie Stephens</a></h5>
@@ -205,7 +205,7 @@
             <div class="single-comment justify-content-between d-flex">
               <div class="user justify-content-between d-flex">
                 <div class="thumb">
-                  <img src="img/blog/c4.jpg" alt="" />
+                  <img src="{% static 'img/blog/c4.jpg' %}" alt="" />
                 </div>
                 <div class="desc">
                   <h5><a href="#">Maria Luna</a></h5>
@@ -222,7 +222,7 @@
             <div class="single-comment justify-content-between d-flex">
               <div class="user justify-content-between d-flex">
                 <div class="thumb">
-                  <img src="img/blog/c5.jpg" alt="" />
+                  <img src="{% static 'img/blog/c5.jpg' %}" alt="" />
                 </div>
                 <div class="desc">
                   <h5><a href="#">Ina Hayes</a></h5>
@@ -330,7 +330,7 @@
             <div class="popular-post-list">
               <div class="single-post-list d-flex flex-row align-items-center">
                 <div class="thumb">
-                  <img class="img-fluid" src="img/blog/pp1.jpg" alt="" />
+                  <img class="img-fluid" src="{% static 'img/blog/pp1.jpg' %}" alt="" />
                 </div>
                 <div class="details">
                   <a href="blog-single.html"
@@ -341,7 +341,7 @@
               </div>
               <div class="single-post-list d-flex flex-row align-items-center">
                 <div class="thumb">
-                  <img class="img-fluid" src="img/blog/pp2.jpg" alt="" />
+                  <img class="img-fluid" src="{% static 'img/blog/pp2.jpg' %}" alt="" />
                 </div>
                 <div class="details">
                   <a href="blog-single.html"><h6>The Amazing Hubble</h6></a>
@@ -350,7 +350,7 @@
               </div>
               <div class="single-post-list d-flex flex-row align-items-center">
                 <div class="thumb">
-                  <img class="img-fluid" src="img/blog/pp3.jpg" alt="" />
+                  <img class="img-fluid" src="{% static 'img/blog/pp3.jpg' %}" alt="" />
                 </div>
                 <div class="details">
                   <a href="blog-single.html"><h6>Astronomy Or Astrology</h6></a>
@@ -359,7 +359,7 @@
               </div>
               <div class="single-post-list d-flex flex-row align-items-center">
                 <div class="thumb">
-                  <img class="img-fluid" src="img/blog/pp4.jpg" alt="" />
+                  <img class="img-fluid" src="{% static 'img/blog/pp4.jpg' %}" alt="" />
                 </div>
                 <div class="details">
                   <a href="blog-single.html"><h6>Asteroids telescope</h6></a>
@@ -370,7 +370,7 @@
           </div>
           <div class="single-sidebar-widget ads-widget">
             <a href="#"
-              ><img class="img-fluid" src="img/blog/ads-banner.jpg" alt=""
+              ><img class="img-fluid" src="{% static 'img/blog/ads-banner.jpg' %}" alt=""
             /></a>
           </div>
           <div class="single-sidebar-widget post-category-widget">
