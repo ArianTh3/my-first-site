@@ -14,8 +14,8 @@ def blog_single(request, pid):
     post.counted_views += 1
     post.save()
   
-    nextpost = blog_Post.objects.filter(id__gt=post.id).order_by('id').first()
-    prevpost = blog_Post.objects.filter(id__lt=post.id).order_by('-id').first()
+    nextpost = blog_Post.objects.filter(id__gt=post.id, status=1).order_by('id').first()
+    prevpost = blog_Post.objects.filter(id__lt=post.id, status=1).order_by('-id').first()
     
     
     context = {'post':post, 'nextpost': nextpost, 'prevpost': prevpost} 

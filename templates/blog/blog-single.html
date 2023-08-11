@@ -86,20 +86,27 @@
                 <a href="{{prevpost.get_absolute_url}}"
                   ><img class="img-fluid" src="{{prevpost.image.url}}" alt=""
                 /></a>
+                {% else %}
+                <a href="{% url 'website:index' %}"></a>
                 {% endif %}
               </div>
               <div class="arrow">
                 {% if prevpost %}
                 <a href="{{prevpost.get_absolute_url}}"
-                  ><span class="lnr text-white lnr-arrow-left"></span
+                ><span class="lnr text-white lnr-arrow-left"></span
                 ></a>
+                {% else %}
+                <a href="{% url 'website:index' %}">Home</a>
                 {% endif %}
               </div>
               <div class="detials">
-                <p>Prev Post</p>
+                
                 {% if prevpost %}
+                <p>Prev Post</p>
                 <a href="{{prevpost.get_absolute_url}}"><h4>{{prevpost.title}}</h4>
                 </a>
+                {% else %}
+                <a href="{% url 'website:index' %}"></a>
                 {% endif %}
               </div>
             </div>
@@ -107,9 +114,12 @@
               class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center"
             >
               <div class="detials">
-                <p>Next Post</p>
+                
                 {% if nextpost %}
+                <p>Next post</p>
                 <a href="{{nextpost.get_absolute_url}}"><h4>{{nextpost.title}}</h4></a>
+                {% else %}
+                <a href="{% url 'website:index' %}">Home</a>
                 {% endif %}
               </div>
               <div class="arrow">
@@ -117,6 +127,8 @@
                 <a href="{{nextpost.get_absolute_url}}"
                   ><span class="lnr text-white lnr-arrow-right"></span
                 ></a>
+                {% else %}
+                <a href="{% url 'website:index' %}"></a>
                 {% endif %}
               </div>
               <div class="thumb">
@@ -124,6 +136,8 @@
                 <a href="{{nextpost.get_absolute_url}}"
                   ><img class="img-fluid" src="{{nextpost.image.url}}" alt=""
                 /></a>
+                {% else %}
+                <a href="{% url 'website:index' %}"></a>
                 {% endif %}
               </div>
             </div>
