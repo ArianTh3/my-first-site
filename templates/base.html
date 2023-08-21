@@ -96,6 +96,7 @@
       </div>
     </header>
     <!-- #header -->
+    {% include 'website/messages.html' %}
     {% block content %} 
     
     {% endblock %}
@@ -186,9 +187,7 @@
           </div>
         </div>
         <div class="messages">
-          {% block messages %}
           
-          {% endblock %}
         </div>
         <div
           class="row footer-bottom d-flex justify-content-between align-items-center"
