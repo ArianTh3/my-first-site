@@ -1,4 +1,5 @@
 {% extends 'base.html' %} 
+{% load humanize %}
 {% load static %} 
 {% load blog_tags %} 
 {% block content %}
@@ -117,7 +118,7 @@
                 <span class="lnr lnr-user"></span>
               </p>
               <p class="date col-lg-12 col-md-12 col-6">
-                <a href="#">{{post.published_date|date:"d M Y"}}</a>
+                <a href="#">{{post.published_date|naturaltime}}</a>
                 <span class="lnr lnr-calendar-full"></span>
               </p>
               <p class="view col-lg-12 col-md-12 col-6">
