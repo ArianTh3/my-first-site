@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'website',
     'blog',
     'django.contrib.humanize',
-    'django.contrib.sites'
+    'django.contrib.sites',
+    "django.contrib.sitemaps"
 ]
 
 SITE_ID = 2
