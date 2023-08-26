@@ -1,8 +1,6 @@
 from django import template
 from blog.models import blog_Post
-
 from blog.models import Category
-
 from blog.models import Comment
 
 
