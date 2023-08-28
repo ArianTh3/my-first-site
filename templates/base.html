@@ -49,7 +49,7 @@
                 <li><a href='{% url 'accounts:logout' %}'>LogOut</a></li>
                 {% else %}
                 <li><a href='{% url 'accounts:login' %}'>Login</a></li>
-                <li><a href='#'>SignUp</a></li>
+                <li><a href='{% url 'accounts:register' %}'>SignUp</a></li>
                 {% endif %}
               </ul>
             </div>
