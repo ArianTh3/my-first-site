@@ -4,6 +4,8 @@ from django.utils import timezone
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from blog.forms import CommentForm
 from django.contrib import messages
+from django.urls import reverse
+from django.shortcuts import HttpResponseRedirect
 
 # Create your views here.
 
@@ -42,11 +44,13 @@ def blog_single(request, pid):
     nextpost = blog_Post.objects.filter(id__gt=post.id, status=1).order_by('id').first()
     prevpost = blog_Post.objects.filter(id__lt=post.id, status=1).order_by('-id').first()
     
-    comments = Comment.objects.filter(posts=post.id, approved=True)
-    
-    form = CommentForm()
-    context = {'post':post, 'nextpost': nextpost, 'prevpost': prevpost, 'comments': comments, 'form': form} 
-    return render(request, "blog/blog-single.html", context)
+    if not post.login_required:
+        comments = Comment.objects.filter(posts=post.id, approved=True)
+        form = CommentForm()
+        context = {'post':post, 'nextpost': nextpost, 'prevpost': prevpost, 'comments': comments, 'form': form} 
+        return render(request, "blog/blog-single.html", context)
+    else:
+        return HttpResponseRedirect(reverse('accounts:login'))
 
 
 def blog_category(request, cat_name):
