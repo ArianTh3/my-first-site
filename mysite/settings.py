@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -48,10 +49,13 @@ INSTALLED_APPS = [
     "taggit",
     'django_summernote',
     'captcha',
-    "accounts"
+    "accounts",
+     'crispy_forms'
 ]
 
 SITE_ID = 2
+
+
 
 ROBOTS_USE_SITEMAP = True
 ROBOTS_USE_HOST = True
@@ -196,3 +200,10 @@ INTERNAL_IPS = [
 X_FRAME_OPTIONS = "SAMEORIGIN"
 
 AUTHENTICATION_BACKENDS = ['accounts.backends.EmailBackend']
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')

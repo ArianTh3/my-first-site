@@ -20,6 +20,8 @@ from django.conf.urls.static import static
 from django.contrib.sitemaps.views import sitemap
 from website.sitemaps import StaticViewSitemap
 from blog.sitemaps import BlogSitemap
+from django.contrib.auth import views as auth_views
+
 
 sitemaps = {
     'static': StaticViewSitemap,
@@ -38,6 +40,26 @@ urlpatterns = [
     path("__debug__/", include("debug_toolbar.urls")),
     path('summernote/', include('django_summernote.urls')),
     path('captcha/', include('captcha.urls')),
+    path('password-reset/',
+         auth_views.PasswordResetView.as_view(
+             template_name='accounts/password_reset.html'
+         ),
+         name='password_reset'),
+    path('password-reset/done/',
+         auth_views.PasswordResetDoneView.as_view(
+             template_name='accounts/password_reset_done.html'
+         ),
+         name='password_reset_done'),
+    path('password-reset-confirm/<uidb64>/<token>/',
+         auth_views.PasswordResetConfirmView.as_view(
+             template_name='accounts/password_reset_confirm.html'
+         ),
+         name='password_reset_confirm'),
+    path('password-reset-complete/',
+         auth_views.PasswordResetCompleteView.as_view(
+             template_name='accounts/password_reset_complete.html'
+         ),
+         name='password_reset_complete'),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
