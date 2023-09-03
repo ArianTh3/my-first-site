@@ -17,7 +17,7 @@
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="{% static 'css/signin.css' %}" />
   </head>
-
+  {% include 'website/messages.html' %}
   <body class="text-center">
     <form class="form-signin" method='post' action="{% url 'accounts:register' %}">
         {% csrf_token %}
