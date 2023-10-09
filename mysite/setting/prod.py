@@ -8,7 +8,7 @@ SECRET_KEY = 'django-insecure-7aus290c6$3j3$lix=fdk=ifcjv0y%n5f8ihkbq3fju881+y(7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['theariankhademzade.ir', 'www.theariankhademzade.ir']
+ALLOWED_HOSTS = ['theariankhademzadeh.ir', 'www.theariankhademzadeh.ir']
 
 SITE_ID = 2
 

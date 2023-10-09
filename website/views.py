@@ -23,3 +23,5 @@ def contact_view(request):
     return render(request, "website/contact.html", {"form":form})
 
 
+def coming_soon_view(request):
+    return render(request, "website/coming_soon.html")
