@@ -21,7 +21,3 @@ def contact_view(request):
             messages.add_message(request, messages.ERROR, "your ticket did not submited")
     form = ContactForm()
     return render(request, "website/contact.html", {"form":form})
-
-
-def coming_soon_view(request):
-    return render(request, "website/coming_soon.html")
