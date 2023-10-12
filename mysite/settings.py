@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django_summernote',
     'captcha',
     "accounts",
-     'crispy_forms'
+    'crispy_forms',
+    'maintenance_mode'
 ]
 
 
@@ -95,6 +96,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "debug_toolbar.middleware.DebugToolbarMiddleware",
+    'maintenance_mode.middleware.MaintenanceModeMiddleware',
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -189,3 +191,6 @@ EMAIL_HOST_USER = "ariankhademzadeh0@gmail.com"
 EMAIL_HOST_PASSWORD = 'ojzaqxhyjctuonsm'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+MAINTENANCE_MODE = True
+MAINTENANCE_MODE_TEMPLATE = "website/coming_soon.html"
