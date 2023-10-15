@@ -10,12 +10,16 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['theariankhademzadeh.ir', 'www.theariankhademzadeh.ir']
 
-SITE_ID = 2
+SITE_ID = 3
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'thearia1_Travel1',
+        'USER': 'thearia1_arian',
+        'PASSWORD': '09143533943Ar',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 

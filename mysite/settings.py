@@ -192,5 +192,5 @@ EMAIL_HOST_PASSWORD = 'ojzaqxhyjctuonsm'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-MAINTENANCE_MODE = True
+MAINTENANCE_MODE = None
 MAINTENANCE_MODE_TEMPLATE = "website/coming_soon.html"
